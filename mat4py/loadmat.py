@@ -345,7 +345,7 @@ def read_struct_array(fd, endian, header):
 
 
 def read_char_array(fd, endian, header):
-    array = read_numeric_array(fd, endian, header, ['miUTF8'])
+    array = read_numeric_array(fd, endian, header, ['miUTF8', 'miUTF16'])
     if header['dims'][0] > 1:
         # collapse rows of chars into a list of strings
         array = [asstr(bytearray(i)) for i in array]
